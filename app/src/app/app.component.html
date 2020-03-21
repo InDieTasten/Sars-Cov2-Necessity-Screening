@@ -1,61 +1,10 @@
 
-<div class="row clearfix">
-  <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="card">
-          <div class="header">
-              <h2><strong>Header</strong></h2>
-          </div>
-          <div class="body">
-              <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
-                  <h1>Demografische Daten</h1>
-                  <div class="form-group form-float">
-                    <label class="control-label">
-                      Alter
-                      <input type="text" formControlName="age" class="form-control" />
-                    </label>
-                    <label class="control-label">
-                      Name
-                      <input type="text" formControlName="name" class="form-control" />
-                    </label>
-                    <label class="control-label">
-                      PLZ
-                      <input type="text" formControlName="zip" class="form-control" />
-                    </label>
-                    <label class="control-label">
-                      Telefonnummer
-                      <input type="text" formControlName="phone" class="form-control" />
-                    </label>
-                    <label class="control-label">
-                      Arbeiten Sie im Gesundheitswesen?
-                      <input type="radio" formControlName="healthcare" class="form-control" value="yes" name="healthcare" ngModel> Ja
-                      <input type="radio" formControlName="healthcare" class="form-control" value="no" name="healthcare" ngModel> Nein
-                    </label>
-                  </div>
-                  <div class="form-group form-float">
-                    <h1>Leiden Sie Unter den folgenden Vorerkrankungen?</h1>
-                    <div *ngFor="let choice of preexistingconditions; let i=index" class="col-md-2">
-                      <label>
-                        <input type="checkbox" [value]="choice.value" (change)="onCheckChange($event)">
-                        {{choice.description}}
-                      </label>
-                    </div>
-
-                    <!-- <label class="control-label">
-                      <input type="checkbox" formControlName="preexistingconditions" class="form-control" value="Krebs">
-                      Krebs
-                    </label>
-                    <label class="control-label">
-                      <input type="checkbox" formControlName="preexistingconditions" class="form-control" value="Bluthochdruck">
-                      Bluthochdruck
-                    </label> -->
-                    
-                  </div>
-                  <button type="submit" class="btn btn-raised btn-primary waves-effect" >Save</button>
-                  {{ form.value | json }}
-              </form>
-          </div>
-      </div>
-  </div>
+<div class="container">
+  <app-demographics [section]="questionaire.demographics"></app-demographics>
+  <app-preconditions [section]="questionaire.preconditions"></app-preconditions>
+  <app-symptoms [section]="questionaire.symptoms"></app-symptoms>
 </div>
 
-<router-outlet></router-outlet>
+<pre>
+  {{ questionaire | json }}
+</pre>
