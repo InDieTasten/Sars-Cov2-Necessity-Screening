@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Question } from '../question';
 
 @Component({
@@ -13,9 +13,16 @@ export class QuestionComponent implements OnInit {
   public question: Question;
   @Input()
   public name: string;
+
+  @Output()
+  public change = new EventEmitter();
+  
   ngOnInit(): void {
   }
 
+  public emitChange() {
+    this.change.emit();
+  }
   public getChoiceKeys(): any[] {
     return Object.keys(this.question.choices);
   }

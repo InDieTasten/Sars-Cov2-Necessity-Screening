@@ -1,7 +1,12 @@
 
-export interface Question {
+export class Question {
+    display: string;
+    choices: Answer[];
+    type: string;
+    value: any;
+}
+
+export interface Answer {
     display: string,
-    choices: any[],
-    type: string,
-    value: any
+    riskValue: number
 }
