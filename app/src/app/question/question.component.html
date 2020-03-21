@@ -3,7 +3,7 @@
         <h3>{{ question.display }}</h3>
         <div class="form-check" *ngFor="let answer of getChoiceKeys()">
             <input [id]="name + answer" [name]="name" [value]="answer" type="radio" [(ngModel)]="question.value" class="form-check-input" />
-            <label class="form-check-label" [for]="name + answer">
+            <label [for]="name + answer" [ngClass]="{checked: question.value === answer, 'form-check-label': true}">
                 {{ question.choices[answer].display }}
             </label>
         </div>
