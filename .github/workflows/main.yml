@@ -44,4 +44,5 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.GH_PAT }}
         BRANCH: gh-pages
+        CNAME: necessity-screening.indietasten.net
         FOLDER: 'app/dist/app'
