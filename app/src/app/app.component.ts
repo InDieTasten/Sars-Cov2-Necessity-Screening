@@ -10,12 +10,16 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.updateTotalScore();
   }
-  //public form: FormGroup;
   public questionaire: any = questionaire;
+  public showResult: boolean = false;
 
   public updateTotalScore() {
     let predispositionScore = this.questionaire.demographics.score || 0 + this.questionaire.preconditions.score || 0;
     let symptomsScore = this.questionaire.symptoms.score || 0 * 10.891089;
     this.questionaire.score = (symptomsScore + predispositionScore) / 2;
+  }
+
+  handleClick(event: Event) {
+    this.showResult = true;
   }
 }
