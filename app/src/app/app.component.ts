@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   public updateTotalScore() {
     let predispositionScore = this.questionaire.demographics.score || 0 + this.questionaire.preconditions.score || 0;
-    let symptomsScore = this.questionaire.symptoms.score || 0 * 10.891089;
+    let symptomsScore = this.questionaire.symptoms.score || 0 * 3 ^ (1+(this.questionaire.demographics.age.value || 0/100));
     this.questionaire.score = (symptomsScore + predispositionScore) / 2;
   }
 
