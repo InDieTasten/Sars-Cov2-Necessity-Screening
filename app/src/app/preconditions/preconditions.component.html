@@ -5,5 +5,4 @@
     <div class="question" *ngFor="let questionKey of getQuestionKeys()">
         <app-question [question]="section[questionKey]" [name]="questionKey" (change)="updateScore()"></app-question>
     </div>
-    <span class="text-danger">Section Score: {{section.score}}</span>
 </div>
