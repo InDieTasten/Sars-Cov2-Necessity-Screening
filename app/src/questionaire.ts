@@ -4,10 +4,12 @@ export const questionaire = {
             display: "In welche Altersgruppe fallen Sie?",
             type: "choice",
             choices: {
-                below60: { display: "Ich bin jünger als 60 Jahre.", riskValue: 0.5 },
-                between60_65: { display: "Ich bin zwischen 60 und 65 Jahre alt.", riskValue: 1 },
-                between65_70: { display: "Ich bin zwischen 66 und 70 Jahre alt.", riskValue: 1.5 },
-                over70: { display: "Ich bin über 70 Jahre alt.", riskValue: 2 }
+                below40: { display: "Ich bin jünger als 40 Jahre.", riskValue: 0.2 },
+                between40_49: { display: "Ich bin zwischen 40 und 49 Jahre alt.", riskValue: 0.4 },
+                between50_59: { display: "Ich bin zwischen 50 und 59 Jahre alt.", riskValue: 1.3 },
+                between60_69: { display: "Ich bin zwischen 60 und 69 Jahre alt.", riskValue: 3.6 },
+                between70_79: { display: "Ich bin zwischen 70 und 79 Jahre alt.", riskValue: 8.0 },
+                over80: { display: "Ich bin über 80 Jahre alt.", riskValue: 14.8 }
             }
         },
         firstName: {
@@ -40,41 +42,41 @@ export const questionaire = {
             display: "Haben oder hatten Sie eine Krebserkrankung?",
             type: "choice",
             choices: {
-                no: { display: "Nein", riskValue: 1 },
-                currently: { display: "Ja, aktuell", riskValue: 3 },
-                previously: { display: "Ja, in der Vergangenheit", riskValue: 1.3 }
+                no: { display: "Nein", riskValue: 0.0 },
+                currently: { display: "Ja, aktuell", riskValue: 5.6 },
+                previously: { display: "Ja, in der Vergangenheit", riskValue: 2.0 }
             }
         },
         highBloodPressure: {
             display: "Haben Sie Bluthochdruck?",
             type: "choice",
             choices: {
-                no: { display: "Nein", riskValue: 1 },
-                yes: { display: "Ja", riskValue: 3 }
+                no: { display: "Nein", riskValue: 0.0 },
+                yes: { display: "Ja", riskValue: 6.0 }
             }
         },
         cardiovascularDiseases: {
             display: "Haben Sie Kardiovaskuläre Erkrankungen?",
             type: "choice",
             choices: {
-                no: { display: "Nein", riskValue: 1 },
-                yes: { display: "Ja", riskValue: 3 }
+                no: { display: "Nein", riskValue: 0.0 },
+                yes: { display: "Ja", riskValue: 10.5 }
             }
         },
         diabetes: {
             display: "Haben Sie Diabetes?",
             type: "choice",
             choices: {
-                no: { display: "Nein", riskValue: 1 },
-                yes: { display: "Ja", riskValue: 3 }
+                no: { display: "Nein", riskValue: 0.0 },
+                yes: { display: "Ja", riskValue: 7.3 }
             }
         },
         chronicLungDiseases: {
             display: "Haben Sie Chronische Lungenerkrankungen?",
             type: "choice",
             choices: {
-                no: { display: "Nein", riskValue: 1 },
-                yes: { display: "Ja", riskValue: 3 }
+                no: { display: "Nein", riskValue: 0.0 },
+                yes: { display: "Ja", riskValue: 6.3 }
             }
         }
     },
@@ -83,26 +85,26 @@ export const questionaire = {
             display: "Haben Sie Halsschmerzen?",
             type: "choice",
             choices: {
-                no: { display: "Nein", riskValue: 0.8 },
-                yes: { display: "Ja", riskValue: 1.2 }
+                no: { display: "Nein", riskValue: 0.0 },
+                yes: { display: "Ja", riskValue: 0.5 }
             }
         },
         fever: {
             display: "Haben Sie Fieber?",
             type: "choice",
             choices: {
-                no: { display: "Nein", riskValue: 0 },
-                light: { display: "37,5 °C bis 38 °C", riskValue: 0.8 },
+                no: { display: "Nein", riskValue: 0.0 },
+                light: { display: "37,5 °C bis 38 °C", riskValue: 0.5 },
                 medium: { display: "38 °C bis 39 °C", riskValue: 1.0 },
-                heavy: { display: ">über 39 °C", riskValue: 1.2 }
+                heavy: { display: ">über 39 °C", riskValue: 1.5 }
             }
         },
         headCold: {
             display: "Haben Sie Schnupfen?",
             type: "choice",
             choices: {
-                no: { display: "Nein", riskValue: 0.8 },
-                yes: { display: "Ja", riskValue: 1.2 }
+                no: { display: "Nein", riskValue: 0.0 },
+                yes: { display: "Ja", riskValue: 0.5 }
             }
         },
         cough: {
@@ -117,16 +119,16 @@ export const questionaire = {
             display: "Leiden Sie unter Kurzatmigkeit?",
             type: "choice",
             choices: {
-                no: { display: "Nein", riskValue: 0.8 },
-                yes: { display: "Ja", riskValue: 1.2 }
+                no: { display: "Nein", riskValue: 0.0 },
+                yes: { display: "Ja", riskValue: 1.0 }
             }
         },
         breathlessness: {
             display: "Leiden Sie unter Atemnot?",
             type: "choice",
             choices: {
-                no: { display: "Nein", riskValue: 0.8 },
-                yes: { display: "Ja", riskValue: 1.2 }
+                no: { display: "Nein", riskValue: 0.0 },
+                yes: { display: "Ja", riskValue: 1.5 }
             }
         }
     },
