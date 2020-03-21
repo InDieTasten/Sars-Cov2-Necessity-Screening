@@ -1,0 +1,20 @@
+<div class="question">
+    <div *ngIf="question.type === 'choice'">
+        <h3>{{ question.display }}</h3>
+        <div class="form-check" *ngFor="let answer of getChoiceKeys()">
+            <input [name]="name" [value]="answer" type="radio" [(ngModel)]="question.value" class="form-check-input" />
+            <label class="form-check-label">
+                {{ question.choices[answer].display }}
+            </label>
+        </div>
+    </div>
+    <div *ngIf="question.type === 'text' || question.type === 'zip'">
+        <h3>{{ question.display }}</h3>
+        <input class="form-control" type="text" [name]="name" [(ngModel)]="question.value" />
+    </div>
+
+    <div *ngIf="question.type === 'tel'">
+        <h3>{{question.display}}</h3>
+        <input class="form-control" [name]="name" type="tel" />
+    </div>
+</div>

@@ -11,20 +11,20 @@ export const questionaire = {
             }
         },
         firstName: {
-            display: "Vorname",
-            type: "text"
+            display: "Wie ist Ihr Vorname?",
+            type: "text",
         },
         lastName: {
-            display: "Nachname",
+            display: "Wie ist Ihr Nachname?",
             type: "text"
         },
         zipCode: {
-            display: "PLZ",
+            display: "Wie ist Ihre PLZ?",
             type: "zip"
         },
         phoneNumber: {
-            display: "Telefonnummer",
-            type: "phone"
+            display: "Wie ist Ihre Telefonnummer?",
+            type: "tel"
         },
         isHealthCareStaff: {
             display: "Arbeiten Sie im Gesundheitswesen?",

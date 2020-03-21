@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 import { choice } from './choice';
+import { questionaire } from 'src/questionaire';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-
-
 export class AppComponent {
-  public form: FormGroup;
+  //public form: FormGroup;
+  public questionaire = questionaire;
 
   public preexistingconditions: Array<choice> = [
     {description: 'Krebs', value: 'Krebs'},
@@ -21,47 +21,47 @@ export class AppComponent {
     private fb: FormBuilder) { }
 
   public ngOnInit(): void {
-    this.form = this.fb.group({
-      age: [""],
-      name: [""],
-      zip: [""],
-      phone: [""],
-      healthcare: [""],
-      preexistingconditions: new FormArray([])
-    });
-
-    this.setFormData();
+    //this.questionaire.demographics.
+    // this.form = this.fb.group({
+    //   age: [""],
+    //   name: [""],
+    //   zip: [""],
+    //   phone: [""],
+    //   healthcare: [""],
+    //   preexistingconditions: new FormArray([])
+    // });
+    // this.setFormData();
   }
 
   public onSubmit(): void {
-      if (this.form.valid) {
+      // if (this.form.valid) {
           
-      }
+      // }
   }
 
   onCheckChange(event) {
-    const formArray: FormArray = this.form.get('preexistingconditions') as FormArray;
+    // //const formArray: FormArray = this.form.get('preexistingconditions') as FormArray;
   
-    /* Selected */
-    if(event.target.checked){
-      // Add a new control in the arrayForm
-      formArray.push(new FormControl(event.target.value));
-    }
-    /* unselected */
-    else{
-      // find the unselected element
-      let i: number = 0;
+    // /* Selected */
+    // if(event.target.checked){
+    //   // Add a new control in the arrayForm
+    //   formArray.push(new FormControl(event.target.value));
+    // }
+    // /* unselected */
+    // else{
+    //   // find the unselected element
+    //   let i: number = 0;
   
-      formArray.controls.forEach((ctrl: FormControl) => {
-        if(ctrl.value == event.target.value) {
-          // Remove the unselected element from the arrayForm
-          formArray.removeAt(i);
-          return;
-        }
+    //   formArray.controls.forEach((ctrl: FormControl) => {
+    //     if(ctrl.value == event.target.value) {
+    //       // Remove the unselected element from the arrayForm
+    //       formArray.removeAt(i);
+    //       return;
+    //     }
   
-        i++;
-      });
-    }
+    //     i++;
+    //   });
+    // }
   }
   private setFormData(): void {
 
