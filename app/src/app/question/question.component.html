@@ -1,4 +1,4 @@
-<div class="question mt-4">
+<div class="question mb-4">
     <div *ngIf="question.type === 'choice'">
         <h3>{{ question.display }}</h3>
         <div class="form-check" *ngFor="let answer of getChoiceKeys()">
