@@ -38,23 +38,6 @@ export const questionaire = {
         }
     },
     preconditions: {
-        cancer: {
-            display: "Haben oder hatten Sie eine Krebserkrankung?",
-            type: "choice",
-            choices: {
-                no: { display: "Nein", riskValue: 0.0 },
-                currently: { display: "Ja, aktuell", riskValue: 5.6 },
-                previously: { display: "Ja, in der Vergangenheit", riskValue: 2.0 }
-            }
-        },
-        highBloodPressure: {
-            display: "Haben Sie Bluthochdruck?",
-            type: "choice",
-            choices: {
-                no: { display: "Nein", riskValue: 0.0 },
-                yes: { display: "Ja", riskValue: 6.0 }
-            }
-        },
         cardiovascularDiseases: {
             display: "Haben Sie eine Herzkrankheit?",
             type: "choice",
@@ -77,6 +60,23 @@ export const questionaire = {
             choices: {
                 no: { display: "Nein", riskValue: 0.0 },
                 yes: { display: "Ja", riskValue: 6.3 }
+            }
+        },
+        highBloodPressure: {
+            display: "Haben Sie Bluthochdruck?",
+            type: "choice",
+            choices: {
+                no: { display: "Nein", riskValue: 0.0 },
+                yes: { display: "Ja", riskValue: 6.0 }
+            }
+        },
+        cancer: {
+            display: "Haben oder hatten Sie eine Krebserkrankung?",
+            type: "choice",
+            choices: {
+                no: { display: "Nein", riskValue: 0.0 },
+                currently: { display: "Ja, aktuell", riskValue: 5.6 },
+                previously: { display: "Ja, in der Vergangenheit", riskValue: 2.0 }
             }
         }
     },
@@ -142,7 +142,7 @@ export const questionaire = {
             }
         },
         contactToRiskyRegion: {
-            display: "Hatten Sie Kontakt zu einer Person, die innerhalb den letzten 14 Tagen im Ausland oder einem Risikogebiet war?",
+            display: "Hatten Sie Kontakt zu einer Person, die innerhalb der letzten 14 Tagen im Ausland oder einem Risikogebiet war?",
             type: "choice",
             choices: {
                 no: { display: "Nein", riskValue: 0.8 },

@@ -11,4 +11,9 @@ import { questionaire } from 'src/questionaire';
 export class AppComponent {
   //public form: FormGroup;
   public questionaire = questionaire;
+  public showResult:boolean = false;
+
+  handleClick(event: Event) {
+    this.showResult = true;
+  }
 }
