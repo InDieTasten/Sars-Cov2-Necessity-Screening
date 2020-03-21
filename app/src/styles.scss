@@ -1,5 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-$body-bg: #1B2038;
+$body-bg: #1b2038;
 $body-color: rgb(174, 187, 255);
+$font-family-sans-serif: "Roboto", sans-serif;
+$headings-font-weight: 300;
+$headings-color: white;
+$font-size-base: 1rem !default;
+$h3-font-size: $font-size-base * 1.5 !default;
+$h4-font-size: $font-size-base * 1.25 !default;
+$h5-font-size: $font-size-base * 1.125 !default;
+$h6-font-size: $font-size-base !default;
+
 @import "~bootstrap/scss/bootstrap";
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+}
