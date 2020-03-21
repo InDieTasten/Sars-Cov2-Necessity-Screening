@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Question } from '../question';
 
 @Component({
   selector: 'app-preconditions',
@@ -12,7 +13,21 @@ export class PreconditionsComponent implements OnInit {
   @Input()
   public section: any;
 
+  @Output()
+  public change = new EventEmitter();
+
   ngOnInit(): void {
+  }
+
+  public updateScore() {
+    this.section.score = 0;
+    for (let name of Object.keys(this.section)) {
+      let question = this.section[name] as Question;
+      if (question.type == 'choice' && question.value) {
+        this.section.score += question.choices[question.value].riskValue;
+      }
+    }
+    this.change.emit();
   }
 
   public getQuestionKeys(): string[] {

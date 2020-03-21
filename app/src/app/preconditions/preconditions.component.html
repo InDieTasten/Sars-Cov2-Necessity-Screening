@@ -1,7 +1,8 @@
 <h2>Vorerkrankungen</h2>
 
+
 <div class="questions px-3 pt-3 rounded">
     <div class="question" *ngFor="let questionKey of getQuestionKeys()">
-        <app-question [question]="section[questionKey]" [name]="questionKey"></app-question>
+        <app-question [question]="section[questionKey]" [name]="questionKey" (change)="updateScore()"></app-question>
     </div>
 </div>
