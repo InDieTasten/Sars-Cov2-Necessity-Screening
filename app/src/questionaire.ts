@@ -4,13 +4,13 @@ export const questionaire = {
             display: "Ihre Altersgruppe",
             type: "choice",
             choices: {
-                10: { display: "jünger als 20 Jahre.", riskValue: 0.0 },
-                30: { display: "zwischen 20 und 39 Jahre alt.", riskValue: 0.2 },
-                45: { display: "zwischen 40 und 49 Jahre alt.", riskValue: 0.4 },
-                55: { display: "zwischen 50 und 59 Jahre alt.", riskValue: 1.3 },
-                65: { display: "zwischen 60 und 69 Jahre alt.", riskValue: 3.6 },
-                75: { display: "zwischen 70 und 79 Jahre alt.", riskValue: 8.0 },
-                90: { display: "80 Jahre oder älter.", riskValue: 14.8 }
+                10: { display: "jünger als 20 Jahre", riskValue: 0.0 },
+                30: { display: "zwischen 20 und 39 Jahre", riskValue: 0.2 },
+                45: { display: "zwischen 40 und 49 Jahre", riskValue: 0.4 },
+                55: { display: "zwischen 50 und 59 Jahre", riskValue: 1.3 },
+                65: { display: "zwischen 60 und 69 Jahre", riskValue: 3.6 },
+                75: { display: "zwischen 70 und 79 Jahre", riskValue: 8.0 },
+                90: { display: "80 Jahre oder älter", riskValue: 14.8 }
             }
         },
         // firstName: {
