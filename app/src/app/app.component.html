@@ -8,13 +8,14 @@
 
   </div>
   
-    <app-demographics [section]="questionaire.demographics"></app-demographics>
-    <app-symptoms [section]="questionaire.symptoms"></app-symptoms>
-    <app-preconditions [section]="questionaire.preconditions"></app-preconditions>
-    <app-environment-info [section]="questionaire.environmentInfo"></app-environment-info>
+    <app-demographics [section]="questionaire.demographics" (change)="updateTotalScore()"></app-demographics>
+    <app-symptoms [section]="questionaire.symptoms" (change)="updateTotalScore()"></app-symptoms>
+    <app-preconditions [section]="questionaire.preconditions" (change)="updateTotalScore()"></app-preconditions>
+    <app-environment-info [section]="questionaire.environmentInfo" (change)="updateTotalScore()"></app-environment-info>
   
   <hr>
 
+  SCORE :::: {{ questionaire.score }} ::::
 
 </div>
 
