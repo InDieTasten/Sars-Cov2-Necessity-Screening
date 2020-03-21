@@ -8,6 +8,7 @@ import { QuestionComponent } from './question/question.component';
 import { DemographicsComponent } from './demographics/demographics.component';
 import { PreconditionsComponent } from './preconditions/preconditions.component';
 import { SymptomsComponent } from './symptoms/symptoms.component';
+import { EnvironmentInfoComponent } from './environment-info/environment-info.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SymptomsComponent } from './symptoms/symptoms.component';
     QuestionComponent,
     DemographicsComponent,
     PreconditionsComponent,
-    SymptomsComponent
+    SymptomsComponent,
+    EnvironmentInfoComponent
   ],
   imports: [
     BrowserModule,

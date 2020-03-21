@@ -1,10 +1,21 @@
 
 <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 874.44 502.89"><defs><style>.cls-1{isolation:isolate;}.cls-2{fill:#fff;}.cls-3{fill:#ff2353;}.cls-3,.cls-4,.cls-5,.cls-6,.cls-7{mix-blend-mode:multiply;}.cls-4{fill:#ccc;}.cls-5{fill:#ffae2c;}.cls-6{fill:#ffe823;}.cls-7{fill:#67e52b;}</style></defs><g class="cls-1"><g id="Ebene_1" data-name="Ebene 1"><rect class="cls-2" x="352.08" width="167.3" height="49.67" rx="24.83"/><path class="cls-2" d="M622.36,178.84V576.18a58.82,58.82,0,0,0,117.64,0V178.84Z" transform="translate(-245.44 -132.11)"/><path class="cls-3" d="M631.16,236V573.89a50,50,0,0,0,100,0V236Z" transform="translate(-245.44 -132.11)"/><path class="cls-4" d="M682,183.06V623.87a50,50,0,0,0,49.22-50V183.06Z" transform="translate(-245.44 -132.11)"/><rect class="cls-2" x="213.18" y="76.22" width="120.5" height="35.77" rx="17.89"/><path class="cls-2" d="M476.51,242V528.17a42.36,42.36,0,0,0,84.72,0V242Z" transform="translate(-245.44 -132.11)"/><path class="cls-5" d="M482.84,353.52v173a36,36,0,0,0,72.06,0v-173Z" transform="translate(-245.44 -132.11)"/><path class="cls-4" d="M519.45,244.78V562.51a36,36,0,0,0,35.45-36V244.78Z" transform="translate(-245.44 -132.11)"/><rect class="cls-2" x="539.4" y="76.22" width="120.5" height="35.77" rx="17.89"/><path class="cls-2" d="M802.73,242V528.17a42.37,42.37,0,0,0,84.73,0V242Z" transform="translate(-245.44 -132.11)"/><path class="cls-5" d="M809.07,353.52v173a36,36,0,0,0,72,0v-173Z" transform="translate(-245.44 -132.11)"/><path class="cls-4" d="M845.68,244.78V562.51a36,36,0,0,0,35.44-36V244.78Z" transform="translate(-245.44 -132.11)"/><rect class="cls-2" x="88.17" y="123.25" width="94.26" height="27.98" rx="13.99"/><path class="cls-2" d="M347.6,281.68V505.54a33.14,33.14,0,0,0,66.28,0V281.68Z" transform="translate(-245.44 -132.11)"/><path class="cls-6" d="M352.56,418.18v86.07a28.18,28.18,0,0,0,56.36,0V418.18Z" transform="translate(-245.44 -132.11)"/><path class="cls-4" d="M381.19,285.93V532.41a28.17,28.17,0,0,0,27.73-28.16V285.93Z" transform="translate(-245.44 -132.11)"/><rect class="cls-2" x="693.59" y="123.25" width="94.26" height="27.98" rx="13.99"/><path class="cls-2" d="M953,281.68V505.54a33.14,33.14,0,1,0,66.27,0V281.68Z" transform="translate(-245.44 -132.11)"/><path class="cls-6" d="M958,418.18v86.07a28.18,28.18,0,0,0,56.36,0V418.18Z" transform="translate(-245.44 -132.11)"/><path class="cls-4" d="M986.62,285.93V532.41a28.18,28.18,0,0,0,27.73-28.16V285.93Z" transform="translate(-245.44 -132.11)"/><rect class="cls-2" y="172.74" width="57.41" height="17.04" rx="8.52"/><path class="cls-2" d="M254,320.89V457.24a20.19,20.19,0,1,0,40.37,0V320.89Z" transform="translate(-245.44 -132.11)"/><path class="cls-7" d="M257,432.88v23.58a17.17,17.17,0,0,0,34.33,0V432.88Z" transform="translate(-245.44 -132.11)"/><path class="cls-4" d="M274.43,323.47V473.61a17.16,17.16,0,0,0,16.89-17.15v-133Z" transform="translate(-245.44 -132.11)"/><rect class="cls-2" x="817.03" y="172.74" width="57.41" height="17.04" rx="8.52"/><path class="cls-2" d="M1071,320.89V457.24a20.19,20.19,0,1,0,40.37,0V320.89Z" transform="translate(-245.44 -132.11)"/><path class="cls-7" d="M1074,432.88v23.58a17.17,17.17,0,0,0,34.33,0V432.88Z" transform="translate(-245.44 -132.11)"/><path class="cls-4" d="M1091.46,323.47V473.61a17.16,17.16,0,0,0,16.89-17.15v-133Z" transform="translate(-245.44 -132.11)"/></g></g></svg>
+    </div>
+  </div>
+
   <app-demographics [section]="questionaire.demographics"></app-demographics>
   <app-preconditions [section]="questionaire.preconditions"></app-preconditions>
   <app-symptoms [section]="questionaire.symptoms"></app-symptoms>
+  <app-environment-info [section]="questionaire.environmentInfo"></app-environment-info>
+  <hr>
+
+
 </div>
 
 <pre>
+  DEBUG INFO
   {{ questionaire | json }}
 </pre>
