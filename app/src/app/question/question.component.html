@@ -2,8 +2,8 @@
     <div *ngIf="question.type === 'choice'">
         <h3>{{ question.display }}</h3>
         <div class="form-check" *ngFor="let answer of getChoiceKeys()">
-            <input [name]="name" [value]="answer" type="radio" [(ngModel)]="question.value" class="form-check-input" />
-            <label class="form-check-label">
+            <input [id]="name + answer" [name]="name" [value]="answer" type="radio" [(ngModel)]="question.value" class="form-check-input" />
+            <label class="form-check-label" [for]="name + answer">
                 {{ question.choices[answer].display }}
             </label>
         </div>
