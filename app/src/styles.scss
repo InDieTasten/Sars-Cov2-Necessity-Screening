@@ -13,6 +13,12 @@ $h6-font-size: $font-size-base !default;
 
 @import "~bootstrap/scss/bootstrap";
 
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3 {
@@ -21,13 +27,43 @@ h3 {
 
 .questions, .result {
   background-color: #25293c;
+
   label {
     line-height: 2;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    
+    span {
+      background: #fff;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      border: 1px solid #eaeaea;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      transition: all .2s linear;
+    }
   }
+
+  label:hover span {
+      border: 1px solid #bbb;
+  }
+
   input[type="radio"] {
-    opacity: 1;
-    top: 8px;
+    display: none;
   }
+  
+  input[type="radio"] + span {
+    border-radius: 50%;
+  }
+  
+  input[type="radio"]:checked + span{
+      border: 10px solid #67E52B;
+  }
+
   .form-check-label.checked {
       color: white;
       font-weight: 800;
