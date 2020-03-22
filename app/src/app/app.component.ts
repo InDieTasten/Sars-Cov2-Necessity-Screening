@@ -6,6 +6,7 @@ import { questionaire } from 'src/questionaire';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.updateTotalScore();
@@ -17,6 +18,24 @@ export class AppComponent implements OnInit {
     let predispositionScore = this.questionaire.demographics.score || 0 + this.questionaire.preconditions.score || 0;
     let symptomsScore = this.questionaire.symptoms.score || 0 * 3 ^ (1+(this.questionaire.demographics.age.value || 0/100));
     this.questionaire.score = (symptomsScore + predispositionScore) / 2;
+  }
+
+  getLastDemographicsStatus():boolean{
+    let keys = Object.keys(this.questionaire.demographics);
+    return this.questionaire.demographics[keys[keys.length - 1]].value;
+  }
+  getLastSymptonsStatus():boolean{
+    let keys = Object.keys(this.questionaire.symptoms);
+    return this.questionaire.symptoms[keys[keys.length - 1]].value;
+  }
+  getLastPreconditionStatus():boolean{
+    let keys = Object.keys(this.questionaire.preconditions);
+    return this.questionaire.preconditions[keys[keys.length - 1]].value;
+  }
+
+  getLastEnviromentInfoStatus():boolean{
+    let keys = Object.keys(this.questionaire.environmentInfo);
+    return this.questionaire.environmentInfo[keys[keys.length - 1]].value;
   }
 
   handleClick(event: Event) {

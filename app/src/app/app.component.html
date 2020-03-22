@@ -7,11 +7,12 @@
     </div>
   </div>
   
-  <app-demographics *ngIf="!showResult" [section]="questionaire.demographics" (change)="updateTotalScore()"></app-demographics>
-  <app-symptoms *ngIf="!showResult" [section]="questionaire.symptoms" (change)="updateTotalScore()"></app-symptoms>
-  <app-preconditions *ngIf="!showResult" [section]="questionaire.preconditions" (change)="updateTotalScore()"></app-preconditions>
-  <app-environment-info *ngIf="!showResult" [section]="questionaire.environmentInfo" (change)="updateTotalScore()"></app-environment-info>
 
-  <button type="button" *ngIf="!showResult" (click)="handleClick($event)" class="btn btn-success btn-block mt-5 mb-5">Mein Ergebnis</button>
+    <app-demographics *ngIf="!showResult" [section]="questionaire.demographics" (change)="updateTotalScore()"></app-demographics>
+    <app-symptoms [showFirstQuestion]="getLastDemographicsStatus()" *ngIf="!showResult" [section]="questionaire.symptoms" (change)="updateTotalScore()"></app-symptoms>
+    <app-preconditions [showFirstQuestion]="getLastSymptonsStatus()" *ngIf="!showResult" [section]="questionaire.preconditions" (change)="updateTotalScore()"></app-preconditions>
+    <app-environment-info [showFirstQuestion]="getLastPreconditionStatus()" *ngIf="!showResult" [section]="questionaire.environmentInfo" (change)="updateTotalScore()></app-environment-info>
+
+  <button type="button" *ngIf="!showResult" (click)="handleClick($event)" [disabled]="!getLastEnviromentInfoStatus()" class="btn btn-success btn-block mt-5 mb-5">Mein Ergebnis</button>
   <app-result *ngIf="showResult" [score]="questionaire.score"></app-result>
 </div>

@@ -1,11 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Question } from '../question';
 
+
 @Component({
   selector: 'app-demographics',
   templateUrl: './demographics.component.html',
   styleUrls: ['./demographics.component.scss']
 })
+
 export class DemographicsComponent implements OnInit {
 
   constructor() { }

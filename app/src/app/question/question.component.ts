@@ -10,6 +10,8 @@ export class QuestionComponent implements OnInit {
 
   constructor() { }
   @Input()
+  public showQuestion: boolean;
+  @Input()
   public question: Question;
   @Input()
   public name: string;
@@ -20,9 +22,11 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   public emitChange() {
     this.change.emit();
   }
+  
   public getChoiceKeys(): any[] {
     return Object.keys(this.question.choices);
   }

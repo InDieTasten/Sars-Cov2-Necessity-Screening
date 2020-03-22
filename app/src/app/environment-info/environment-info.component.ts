@@ -13,8 +13,13 @@ export class EnvironmentInfoComponent implements OnInit {
   @Input()
   public section: any;
 
+
+  @Input()
+  public showFirstQuestion:boolean; 
+
   @Output()
   public change = new EventEmitter();
+
   ngOnInit(): void {
 
   }
