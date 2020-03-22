@@ -1,7 +1,7 @@
 <h2>Symptome</h2>
 
 <div class="questions px-3 pt-3 rounded">
-    <div class="question" *ngFor="let questionKey of getQuestionKeys()">
-        <app-question [question]="section[questionKey]" [name]="questionKey"></app-question>
+    <div class="question" *ngFor="let questionKey of getQuestionKeys(); index as i">
+        <app-question [showQuestion]="(getQuestionKeys()[i - 1] === undefined || section[getQuestionKeys()[i - 1]]?.value) && showFirstQuestion" [question]="section[questionKey]" [name]="questionKey"></app-question>
     </div>
 </div>

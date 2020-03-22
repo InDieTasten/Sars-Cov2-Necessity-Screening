@@ -10,12 +10,14 @@ export class QuestionComponent implements OnInit {
 
   constructor() { }
   @Input()
+  public showQuestion: boolean;
+  @Input()
   public question: Question;
   @Input()
   public name: string;
   ngOnInit(): void {
   }
-
+  
   public getChoiceKeys(): any[] {
     return Object.keys(this.question.choices);
   }

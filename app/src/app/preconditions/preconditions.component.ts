@@ -12,6 +12,9 @@ export class PreconditionsComponent implements OnInit {
   @Input()
   public section: any;
 
+  @Input()
+  public showFirstQuestion:boolean;
+  
   ngOnInit(): void {
   }
 
