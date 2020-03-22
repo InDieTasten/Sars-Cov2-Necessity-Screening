@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ScoreClass, scoreClasses } from 'src/scoreClasses';
 
 @Component({
   selector: 'app-result',
@@ -10,8 +11,16 @@ export class ResultComponent implements OnInit {
   constructor() { }
 
   @Input()
-  public score: any;
-  
+  public score: number;
+
+  public getCurrentScoreClass(): ScoreClass {
+    for (let scoreClass of scoreClasses) {
+      if (scoreClass.isActive(this.score)) {
+        return scoreClass;
+      }
+    }
+  }
+
   ngOnInit(): void {
   }
 
