@@ -2,7 +2,7 @@
 export const scoreClasses: ScoreClass[] = [
     {
         title: "A",
-        color: "#007F00",
+        color: "#004F00",
         isActive: (score) => score <= 6
     },
     {
