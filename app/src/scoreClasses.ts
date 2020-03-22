@@ -2,33 +2,39 @@
 export const scoreClasses: ScoreClass[] = [
     {
         title: "A",
-        color: "#004F00",
+        backgroundColor: "#004F00",
+        textColor: "white",
         isActive: (score) => score <= 6
     },
     {
         title: "B",
-        color: "#00AF00",
+        backgroundColor: "#00AF00",
+        textColor: "white",
         isActive: (score) => score > 6 && score <= 12
     },
     {
         title: "C",
-        color: "#FFFF00",
+        backgroundColor: "#FFFF00",
+        textColor: "black",
         isActive: (score) => score > 12 && score <= 18
     },
     {
         title: "D",
-        color: "#FF7F00",
+        backgroundColor: "#FF7F00",
+        textColor: "white",
         isActive: (score) => score > 18 && score <= 24
     },
     {
         title: "E",
-        color: "#AF0000",
+        backgroundColor: "#AF0000",
+        textColor: "white",
         isActive: (score) => score > 24
     }
 ];
 
 export class ScoreClass {
-    color: string;
+    backgroundColor: string;
+    textColor: string;
     title: string;
     isActive: (score: number) => boolean;
 }
