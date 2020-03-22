@@ -22,20 +22,20 @@ export class AppComponent implements OnInit {
 
   getLastDemographicsStatus():boolean{
     let keys = Object.keys(this.questionaire.demographics);
-    return this.questionaire.demographics[keys[keys.length - 1]].value;
+    return this.questionaire.demographics[keys[keys.length - 2]].value;
   }
   getLastSymptonsStatus():boolean{
     let keys = Object.keys(this.questionaire.symptoms);
-    return this.questionaire.symptoms[keys[keys.length - 1]].value;
+    return this.questionaire.symptoms[keys[keys.length - 2]].value;
   }
   getLastPreconditionStatus():boolean{
     let keys = Object.keys(this.questionaire.preconditions);
-    return this.questionaire.preconditions[keys[keys.length - 1]].value;
+    return this.questionaire.preconditions[keys[keys.length - 2]].value;
   }
 
   getLastEnviromentInfoStatus():boolean{
     let keys = Object.keys(this.questionaire.environmentInfo);
-    return this.questionaire.environmentInfo[keys[keys.length - 1]].value;
+    return this.questionaire.environmentInfo[keys[keys.length - 2]].value;
   }
 
   handleClick(event: Event) {
