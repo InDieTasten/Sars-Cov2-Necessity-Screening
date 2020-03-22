@@ -42,39 +42,41 @@ h3 {
   font-weight: $light-font-weight;
 }
 
+.logoBackground {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-left: 0px;
+  
+  svg {
+    margin: 4rem;
+    height: 160px;
+  }
+}
+
+.headSpaceQuestions {
+  height: 121px;
+}
+
+.logoBackgroundWelcome {
+  background-image: url('./assets/WelcomeBackground.jpg');
+}
+
+.logoBackgroundQuestions {
+  background-image: url('./assets/QuestionsBackground.jpg');
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  
+  svg {
+    margin: 1rem;
+    height: 89px;
+  }
+}
+
 .container {
   max-width: 700px;
 
-  .logoBackground {
-    background-repeat: no-repeat;
-    background-size: 100%;
-    
-    svg {
-      margin: 4rem;
-      height: 160px;
-    }
-  }
-
-  .headSpaceQuestions {
-    height: 121px;
-  }
-
-  .logoBackgroundWelcome {
-    background-image: url('./assets/WelcomeBackground.jpg');
-  }
-
-  .logoBackgroundQuestions {
-    background-image: url('./assets/QuestionsBackground.jpg');
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-    margin-top: -2px;
-    
-    svg {
-      margin: 1rem;
-      height: 89px;
-    }
-  }
+  
 
   .welcome {
     font-size: $welcome-font-size;
