@@ -1,4 +1,5 @@
-<div [ngClass]="{question: true, reduceOpacity: !showQuestion}">
+<div #targetScrollTo [ngClass]="{question: true, reduceOpacity: !showQuestion}">
+    {{scrollToView(targetScrollTo)}}
     <h3>
         {{ question.display }}
         <a *ngIf="question.linkHref" [href]="question.linkHref" target="_blank">

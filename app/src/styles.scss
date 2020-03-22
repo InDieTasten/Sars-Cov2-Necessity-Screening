@@ -1,20 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-
-
-$body-bg: #1b2038;
+$body-bg: #1a1e38;
 $body-color: #fff;
-$font-family-sans-serif: "Quicksand", sans-serif;
+$font-family-sans-serif: "Source Sans Pro", sans-serif;
 $headings-font-weight: 300;
 $headings-color: white;
 $font-size-base: 1.2rem !default;
+$font-weight-base: 300;
+$welcome-font-size: $font-size-base * 2.5 !default;
 $h1-font-size: $font-size-base * 2 !default;
 $h2-font-size: $font-size-base * 1.6 !default;
 $h3-font-size: $font-size-base * 1.1 !default;
 $h4-font-size: $font-size-base * 1.05 !default;
 $h5-font-size: $font-size-base * 1.025 !default;
 $h6-font-size: $font-size-base !default;
-$buttoncolor:#00B800;
+$buttoncolor:#FF1e53;
 $link-hover-color: white;
 
 @import "~bootstrap/scss/bootstrap";
@@ -33,6 +33,29 @@ h2{
 
 .container {
   max-width: 700px;
+
+  .logoBackgroundWelcome {
+    background: url('./assets/WelcomeBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .welcome {
+    font-size: $welcome-font-size;
+    font-weight: $headings-font-weight;
+    letter-spacing: 0.05em;
+  }
+
+  .welcome-subtitle {
+    font-size: $h3-font-size;
+    font-weight: 400;
+  }
+
+  .logoBackground {
+    background: none;
+    -webkit-transition: background-image 0.5s ease-in-out;
+    transition: background-image 0.5s ease-in-out;
+  }
 }
 .questions, .result {
   background-color: #25293c;
