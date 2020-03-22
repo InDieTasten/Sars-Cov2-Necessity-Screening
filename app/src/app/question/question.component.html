@@ -3,10 +3,9 @@
         <h3>{{ question.display }}</h3>
         <div class="form-check" *ngFor="let answer of getChoiceKeys()">
 
-            <input [id]="name + answer" [name]="name" [value]="answer" type="radio" [(ngModel)]="question.value" [disabled]="!showQuestion" class="form-check-input" />
 
             <label [for]="name + answer" [ngClass]="{checked: question.value === answer, 'form-check-label': true}">
-                <input [id]="name + answer" [name]="name" [value]="answer" type="radio" [(ngModel)]="question.value" class="form-check-input" (change)="emitChange()" />
+                <input [id]="name + answer" [name]="name" [value]="answer" type="radio" [(ngModel)]="question.value" [disabled]="!showQuestion" class="form-check-input" (change)="emitChange()" />
                 <span></span>
                 {{ question.choices[answer].display }}
             </label>
@@ -14,11 +13,11 @@
     </div>
     <div *ngIf="question.type === 'text' || question.type === 'zip'">
         <h3>{{ question.display }}</h3>
-        <input class="form-control" type="text" [name]="name"  [(ngModel)]="question.value" />
+        <input class="form-control" type="text" [name]="name" [disabled]="!showQuestion" [(ngModel)]="question.value" />
     </div>
 
     <div *ngIf="question.type === 'tel'">
         <h3>{{question.display}}</h3>
-        <input class="form-control"  [name]="name" type="tel" />
+        <input class="form-control" [disabled]="!showQuestion" [name]="name" type="tel" />
     </div>
 </div>
