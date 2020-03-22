@@ -144,6 +144,8 @@ export const questionaire = {
     environmentInfo: {
         riskyRegion: {
             display: "Waren Sie innerhalb der letzten 14 Tage im Ausland oder einem Risikogebiet?",
+            linkText: "Aktuelle Risikogebiete anzeigen",
+            linkHref: "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Risikogebiete.html",
             type: "choice",
             choices: {
                 no: { display: "Nein", riskValue: 0.8 },
