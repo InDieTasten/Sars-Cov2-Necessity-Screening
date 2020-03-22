@@ -1,9 +1,12 @@
 <div [ngClass]="{question: true, reduceOpacity: !showQuestion}">
+    <h3>
+        {{ question.display }}
+        <a *ngIf="question.linkHref" [href]="question.linkHref" target="_blank">
+            {{ question.linkText }}
+        </a>
+    </h3>
     <div *ngIf="question.type === 'choice'">
-        <h3>{{ question.display }}</h3>
         <div class="form-check" *ngFor="let answer of getChoiceKeys()">
-
-
             <label [for]="name + answer" [ngClass]="{checked: question.value === answer, 'form-check-label': true}">
                 <input [id]="name + answer" [name]="name" [value]="answer" type="radio" [(ngModel)]="question.value" [disabled]="!showQuestion" class="form-check-input" (change)="emitChange()" />
                 <span></span>
@@ -12,12 +15,10 @@
         </div>
     </div>
     <div *ngIf="question.type === 'text' || question.type === 'zip'">
-        <h3>{{ question.display }}</h3>
         <input class="form-control" type="text" [name]="name" [disabled]="!showQuestion" [(ngModel)]="question.value" />
     </div>
 
     <div *ngIf="question.type === 'tel'">
-        <h3>{{question.display}}</h3>
         <input class="form-control" [disabled]="!showQuestion" [name]="name" type="tel" />
     </div>
 </div>

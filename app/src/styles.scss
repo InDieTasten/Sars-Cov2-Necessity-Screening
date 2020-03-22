@@ -15,6 +15,7 @@ $h4-font-size: $font-size-base * 1.05 !default;
 $h5-font-size: $font-size-base * 1.025 !default;
 $h6-font-size: $font-size-base !default;
 $buttoncolor:#FF1e53;
+$link-hover-color: white;
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -109,3 +110,9 @@ h2{
 .btn-primary {
     @include button-variant($buttoncolor, darken($buttoncolor, 7.5%), darken($buttoncolor, 10%), lighten($buttoncolor,5%), lighten($buttoncolor, 10%), darken($buttoncolor,30%));
 }
+
+//@media (prefers-color-scheme: dark) {
+//  body{
+//    background-color:#1b2038;
+//  }
+//}
