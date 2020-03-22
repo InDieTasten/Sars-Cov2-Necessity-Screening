@@ -6,7 +6,6 @@ $content-box-color: #25293c;
 $headings-color: white;
 $checkbox-background-color: #323751;
 $checkbox-border-color: #393C56;
-$checkbox-hover-color: #bbb;
 $checkbox-selected-color: #0078E6;
 
 $font-family-sans-serif: "Source Sans Pro", sans-serif;
@@ -116,10 +115,6 @@ h3 {
       top: 10px;
       left: 0;
     }
-  }
-
-  label:hover span {
-      border: 1px solid $checkbox-hover-color;
   }
 
   input[type="radio"] {
