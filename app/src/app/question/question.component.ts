@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import smoothscroll from 'smoothscroll-polyfill';
 import { Question } from '../question';
 
 @Component({
@@ -20,9 +21,11 @@ export class QuestionComponent implements OnInit {
   public change = new EventEmitter();
   
   ngOnInit(): void {
+    smoothscroll.polyfill();
   }
 
   public scrollToView(element:HTMLElement){
+    
     if(this.showQuestion){
          element.scrollIntoView({
            behavior:"smooth",
