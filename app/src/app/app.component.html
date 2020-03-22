@@ -13,11 +13,6 @@
     <app-preconditions [showFirstQuestion]="getLastSymptonsStatus()" *ngIf="!showResult" [section]="questionaire.preconditions" (change)="updateTotalScore()"></app-preconditions>
     <app-environment-info [showFirstQuestion]="getLastPreconditionStatus()" *ngIf="!showResult" [section]="questionaire.environmentInfo" (change)="updateTotalScore()></app-environment-info>
 
-    <button type="button" *ngIf="!showResult" (click)="handleClick($event)" [disabled]="!getLastEnviromentInfoStatus()" class="btn btn-success btn-block mt-5 mb-5">Mein Ergebnis</button>
-    <app-result *ngIf="showResult" [score]="42"></app-result>
-  
-  <!-- <hr> -->
-
-  <button type="button" *ngIf="!showResult" (click)="handleClick($event)" class="btn btn-success btn-block mt-5 mb-5">Mein Ergebnis</button>
+  <button type="button" *ngIf="!showResult" (click)="handleClick($event)" [disabled]="!getLastEnviromentInfoStatus()" class="btn btn-success btn-block mt-5 mb-5">Mein Ergebnis</button>
   <app-result *ngIf="showResult" [score]="questionaire.score"></app-result>
 </div>
