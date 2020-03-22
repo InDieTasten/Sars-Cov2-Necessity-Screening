@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+
 $body-bg: #1b2038;
 $body-color: #fff;
 $font-family-sans-serif: "Quicksand", sans-serif;
@@ -84,3 +86,9 @@ h2{
 .btn-primary {
     @include button-variant($buttoncolor, darken($buttoncolor, 7.5%), darken($buttoncolor, 10%), lighten($buttoncolor,5%), lighten($buttoncolor, 10%), darken($buttoncolor,30%));
 }
+
+//@media (prefers-color-scheme: dark) {
+//  body{
+//    background-color:#1b2038;
+//  }
+//}
