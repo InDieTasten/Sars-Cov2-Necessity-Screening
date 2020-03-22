@@ -22,6 +22,15 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public scrollToView(element:HTMLElement){
+    if(this.showQuestion){
+         element.scrollIntoView({
+           behavior:"smooth",
+           block:"center"
+         })
+    }
+ 
+  }
 
   public emitChange() {
     this.change.emit();
