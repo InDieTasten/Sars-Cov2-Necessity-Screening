@@ -10,6 +10,7 @@ import { PreconditionsComponent } from './preconditions/preconditions.component'
 import { SymptomsComponent } from './symptoms/symptoms.component';
 import { EnvironmentInfoComponent } from './environment-info/environment-info.component';
 import { ResultComponent } from './result/result.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ResultComponent } from './result/result.component';
     PreconditionsComponent,
     SymptomsComponent,
     EnvironmentInfoComponent,
-    ResultComponent
+    ResultComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
