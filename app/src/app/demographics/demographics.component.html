@@ -3,6 +3,6 @@
 </div>
 <div class="questions px-3 pt-3 pb-1 mb-4 rounded ">
     <div class="question-container mb-4" *ngFor="let questionKey of getQuestionKeys(); index as i" >
-        <app-question [showQuestion]="getQuestionKeys()[i - 1] === undefined || section[getQuestionKeys()[i - 1]]?.value" [question]="section[questionKey]" [name]="questionKey" (change)="updateScore()"></app-question>
+        <app-question [showQuestion]="getQuestionKeys()[i - 1] === undefined || section[getQuestionKeys()[i - 1]]?.value" [question]="section[questionKey]" [name]="questionKey" (change)="updateScore()" [firstQuestion]="i===0"></app-question>
     </div>
 </div>

@@ -15,6 +15,8 @@ export class QuestionComponent implements OnInit {
   public question: Question;
   @Input()
   public name: string;
+  @Input()
+  public firstQuestion:boolean = false;
 
   @Output()
   public change = new EventEmitter();
@@ -23,7 +25,7 @@ export class QuestionComponent implements OnInit {
   }
 
   public scrollToView(element:HTMLElement){
-    if(this.showQuestion){
+    if(this.showQuestion && !this.firstQuestion){
          element.scrollIntoView({
            behavior:"smooth",
            block:"center"
