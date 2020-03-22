@@ -111,6 +111,10 @@ h2{
     @include button-variant($buttoncolor, darken($buttoncolor, 7.5%), darken($buttoncolor, 10%), lighten($buttoncolor,5%), lighten($buttoncolor, 10%), darken($buttoncolor,30%));
 }
 
+.result * {
+  color: inherit !important;
+}
+
 //@media (prefers-color-scheme: dark) {
 //  body{
 //    background-color:#1b2038;

@@ -2,7 +2,7 @@
 
 <div
     class="result px-3 pt-3 pb-2 rounded text-center"
-    [ngStyle]="{'background-color': getCurrentScoreClass().color}">
+    [ngStyle]="{'background-color': getCurrentScoreClass().backgroundColor, 'color': getCurrentScoreClass().textColor}">
     <h1>{{ getCurrentScoreClass().title }}</h1>
     <h2>:::: {{ score | number:'1.1-3' }} ::::</h2>
 </div>
