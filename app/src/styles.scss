@@ -12,6 +12,7 @@ $h3-font-size: $font-size-base * 1.1 !default;
 $h4-font-size: $font-size-base * 1.05 !default;
 $h5-font-size: $font-size-base * 1.025 !default;
 $h6-font-size: $font-size-base !default;
+$buttoncolor:#00B800;
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -27,6 +28,9 @@ h2{
   font-variant:small-caps;
 }
 
+.container {
+  max-width: 700px;
+}
 .questions, .result {
   background-color: #25293c;
 
@@ -63,13 +67,8 @@ h2{
   }
   
   input[type="radio"]:checked + span{
-      border: 10px solid #67E52B;
-  }
-
-  .form-check-label.checked {
-      color: white;
-      font-weight: 800;
-      position: relative;
+      border: 2px solid #fff;
+      background: #464EAF;
   }
 
   .question-container:last-child {
@@ -79,4 +78,9 @@ h2{
 
 .reduceOpacity {
   opacity: 0.5 !important;
+}
+
+
+.btn-primary {
+    @include button-variant($buttoncolor, darken($buttoncolor, 7.5%), darken($buttoncolor, 10%), lighten($buttoncolor,5%), lighten($buttoncolor, 10%), darken($buttoncolor,30%));
 }
