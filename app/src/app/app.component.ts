@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
     this.updateTotalScore();
   }
   public questionaire: any = questionaire;
-  public showResult: boolean = false;
+  public showPage: string = 'welcome';
 
   public updateTotalScore() {
     let predispositionScore = this.questionaire.demographics.score || 0 + this.questionaire.preconditions.score || 0;
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
     return this.questionaire.environmentInfo[keys[keys.length - 2]].value;
   }
 
-  handleClick(event: Event) {
-    this.showResult = true;
+  handleClick(event: Event, page: string) {
+    this.showPage = page;
   }
 }
