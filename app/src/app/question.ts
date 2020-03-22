@@ -4,6 +4,8 @@ export class Question {
     choices: Answer[];
     type: string;
     value: any;
+    linkHref: string;
+    linkText: string;
 }
 
 export interface Answer {
