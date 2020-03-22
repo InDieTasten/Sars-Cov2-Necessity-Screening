@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Question } from '../question';
 
 
 @Component({
@@ -15,6 +16,13 @@ export class DemographicsComponent implements OnInit {
   public section: any;
 
   ngOnInit(): void {
+  }
+
+  public updateScore() {
+    this.section.score = 0;
+    if (this.section.age.value) {
+      this.section.score += this.section.age.choices[this.section.age.value].riskValue;
+    }
   }
 
   public getQuestionKeys(): string[] {
