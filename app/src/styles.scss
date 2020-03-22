@@ -1,21 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
-
 $body-bg: #1a1e38;
 $body-color: #fff;
-$font-family-sans-serif: "Source Sans Pro", sans-serif;
-$headings-font-weight: 300;
-$headings-color: white;
-$font-size-base: 1.2rem !default;
-$font-weight-base: 300;
-$welcome-font-size: $font-size-base * 2.5 !default;
-$h1-font-size: $font-size-base * 2 !default;
-$h2-font-size: $font-size-base * 1.6 !default;
-$h3-font-size: $font-size-base * 1.1 !default;
-$h4-font-size: $font-size-base * 1.05 !default;
-$h5-font-size: $font-size-base * 1.025 !default;
-$h6-font-size: $font-size-base !default;
 $buttoncolor:#FF1e53;
 $link-hover-color: white;
+$content-box-color: #25293c;
+$headings-color: white;
+$checkbox-background-color: #323751;
+$checkbox-border-color: #393C56;
+$checkbox-hover-color: #bbb;
+$checkbox-selected-color: #0078E6;
+
+$font-family-sans-serif: "Source Sans Pro", sans-serif;
+$regular-font-weight: 400;
+$light-font-weight: 300;
+$font-weight-base: 300;
+$font-size-base: 1.1rem !default;
+$welcome-font-size: $font-size-base * 2.8 !default;
+$h1-font-size: $font-size-base * 1.5 !default;
+$h2-font-size: $font-size-base * 1.3 !default;
+$h3-font-size: $font-size-base * 1.0 !default;
+$h4-font-size: $font-size-base * 1.0 !default;
+$h5-font-size: $font-size-base * 1.0 !default;
+$h6-font-size: $font-size-base !default;
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -25,63 +30,94 @@ $link-hover-color: white;
   box-sizing: border-box;
 }
 
-h1,
-h2{
-  //text-transform: uppercase;
-  font-variant:small-caps;
+body {
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-weight: $regular-font-weight;
+}
+
+h3 {
+  font-weight: $light-font-weight;
 }
 
 .container {
   max-width: 700px;
 
-  .logoBackgroundWelcome {
-    background: url('./assets/WelcomeBackground.jpg');
+  .logoBackground {
     background-repeat: no-repeat;
     background-size: 100%;
+    
+    svg {
+      margin: 4rem;
+      height: 160px;
+    }
+  }
+
+  .headSpaceQuestions {
+    height: 121px;
+  }
+
+  .logoBackgroundWelcome {
+    background-image: url('./assets/WelcomeBackground.jpg');
+  }
+
+  .logoBackgroundQuestions {
+    background-image: url('./assets/QuestionsBackground.jpg');
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    margin-top: -2px;
+    
+    svg {
+      margin: 1rem;
+      height: 89px;
+    }
   }
 
   .welcome {
     font-size: $welcome-font-size;
-    font-weight: $headings-font-weight;
-    letter-spacing: 0.05em;
+    font-weight: $light-font-weight;
+    line-height: 1;
   }
 
   .welcome-subtitle {
-    font-size: $h3-font-size;
-    font-weight: 400;
-  }
-
-  .logoBackground {
-    background: none;
-    -webkit-transition: background-image 0.5s ease-in-out;
-    transition: background-image 0.5s ease-in-out;
+    font-size: $h2-font-size;
+    font-weight: $regular-font-weight;
+    line-height: 1.2;
   }
 }
+
+.sectionhead {
+  background-color: $content-box-color;
+  margin-bottom: 1px;
+}
+
 .questions, .result {
-  background-color: #25293c;
+  background-color: $content-box-color;
 
   label {
-    line-height: 2;
+    line-height: 2.5;
     display: block;
     position: relative;
     padding-left: 35px;
     cursor: pointer;
     
     span {
-      background: #fff;
-      width: 20px;
-      height: 20px;
+      background: $checkbox-background-color;
+      width: 26px;
+      height: 26px;
       display: inline-block;
-      border: 1px solid #eaeaea;
+      border: 1px solid $checkbox-border-color;
       position: absolute;
       top: 10px;
       left: 0;
-      transition: all .2s linear;
     }
   }
 
   label:hover span {
-      border: 1px solid #bbb;
+      border: 1px solid $checkbox-hover-color;
   }
 
   input[type="radio"] {
@@ -93,19 +129,30 @@ h2{
   }
   
   input[type="radio"]:checked + span{
-      border: 2px solid #fff;
-      background: #464EAF;
+      border: 2px solid $checkbox-selected-color;
+      background: $checkbox-selected-color;
+  }
+
+  input[type="radio"]:checked + span:after{
+    content: "\2713";
+    position: relative;
+    top: -10px;
+    left: 6px;
+    font-size: 0.8em;
   }
 
   .question-container:last-child {
     margin-bottom: 6px !important;
+  }
+
+  .form-check {
+    padding-left: 0;
   }
 }
 
 .reduceOpacity {
   opacity: 0.5 !important;
 }
-
 
 .btn-primary {
     @include button-variant($buttoncolor, darken($buttoncolor, 7.5%), darken($buttoncolor, 10%), lighten($buttoncolor,5%), lighten($buttoncolor, 10%), darken($buttoncolor,30%));
