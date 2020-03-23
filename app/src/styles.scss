@@ -72,6 +72,15 @@ h3 {
   }
 }
 
+.logoBackgroundResult {
+  background-image: url('./assets/ResultBackground.jpg');
+  
+  svg {
+    margin: 1rem;
+    height: 89px;
+  }
+}
+
 .container {
   max-width: 700px;
 
