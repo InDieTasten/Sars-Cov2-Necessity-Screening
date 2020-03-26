@@ -40,5 +40,6 @@ export class AppComponent implements OnInit {
 
   handleClick(event: Event, page: string) {
     this.showPage = page;
+    window.scroll(0,0);
   }
 }
