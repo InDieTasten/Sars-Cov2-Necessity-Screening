@@ -160,6 +160,10 @@ h3 {
   opacity: 0.5 !important;
 }
 
+.btn {
+  font-size: 1.2em;
+}
+
 .btn-primary {
     @include button-variant($buttoncolor, darken($buttoncolor, 7.5%), darken($buttoncolor, 10%), lighten($buttoncolor,5%), lighten($buttoncolor, 10%), darken($buttoncolor,30%));
 }

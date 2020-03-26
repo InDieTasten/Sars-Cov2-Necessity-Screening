@@ -5,9 +5,16 @@
     <div>Bitte teilen Sie diesen Wert bei der Abstrichentnahme der zuständigen Person mit.</div>
 </div>
 
-<div class="px-3 pt-3 pb-2 mt-3 ml-2 mr-2 rounded text-center position-relative">
-    <img src="./assets/{{getCurrentScoreClass().image}}" class="w-100">
-    <span class="result-class">{{ getCurrentScoreClass().title }}</span>
+<div class="px-3 pt-3 pb-2 mt-3 ml-5 mr-5 rounded text-center position-relative">
+    <div class="circleContainer circleColor{{ getCurrentScoreClass().title }}">
+        <div class="circle outerCircle">
+            <div class="circle middleCircle">
+                <div class="circle innerCircle">
+                    <span class="result-class">{{ getCurrentScoreClass().title }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="result-description text-center mt-3">

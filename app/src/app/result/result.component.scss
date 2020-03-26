@@ -1,3 +1,9 @@
+$circleColorA: #00E600;
+$circleColorB: #4E9695;
+$circleColorC: #E8CE00;
+$circleColorD: #FFB100;
+$circleColorE: #FF1854;
+
 .result-class {
     position: absolute;
     top: 50%;
@@ -9,4 +15,94 @@
 
 .result-description {
     font-size: 1.5em;
+}
+
+.circleContainer {
+    position: relative;
+    width: 300px;
+    height: 300px;
+
+    .circle {
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    
+    .outerCircle {
+        width: 100%;
+        height: 100%;
+
+        .middleCircle {
+            width: 72%;
+            height: 72%;
+
+            .innerCircle {
+                width: 60%;
+                height: 60%;
+            }
+        }
+    }
+}
+
+.circleColorA {
+    .outerCircle {
+        background: rgba( $circleColorA, .1 );
+        .middleCircle {
+            background: rgba( $circleColorA, .3 );
+            .innerCircle {
+                background: $circleColorA;
+            }
+        }
+    }
+}
+
+.circleColorB {
+    .outerCircle {
+        background: rgba( $circleColorB, .1 );
+        .middleCircle {
+            background: rgba( $circleColorB, .3 );
+            .innerCircle {
+                background: $circleColorB;
+            }
+        }
+    }
+}
+
+.circleColorC {
+    .outerCircle {
+        background: rgba( $circleColorC, .1 );
+        .middleCircle {
+            background: rgba( $circleColorC, .3 );
+            .innerCircle {
+                background: $circleColorC;
+            }
+        }
+    }
+}
+
+.circleColorD {
+    .outerCircle {
+        background: rgba( $circleColorD, .1 );
+        .middleCircle {
+            background: rgba( $circleColorD, .3 );
+            .innerCircle {
+                background: $circleColorD;
+            }
+        }
+    }
+}
+
+.circleColorE {
+    .outerCircle {
+        background: rgba( $circleColorE, .1 );
+        .middleCircle {
+            background: rgba( $circleColorE, .3 );
+            .innerCircle {
+                background: $circleColorE;
+            }
+        }
+    }
 }
