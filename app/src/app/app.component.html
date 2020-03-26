@@ -22,5 +22,8 @@
     <button type="button" (click)="handleClick($event, 'result')" [disabled]="!getLastEnviromentInfoStatus()" class="btn btn-primary btn-block mt-5 mb-5 pt-3 pb-3">Mein Ergebnis</button>
   </div>
   
-  <app-result *ngIf="showPage=='result'" [score]="questionaire.score"></app-result>
+  <div *ngIf="showPage=='result'" >
+    <app-result [score]="questionaire.score"></app-result>
+    <button type="button" [disabled]="true" class="btn btn-primary btn-block mt-5 mb-5 pt-3 pb-3">Mehr Informationen</button>
+  </div>
 </div>
