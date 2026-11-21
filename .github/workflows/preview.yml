@@ -1,0 +1,23 @@
+name: PR preview
+
+# Builds the image for every PR (the build is the CI check: `preview / build`) and, for PRs from this repository, runs
+# it at https://necessity-screening-pr-<N>.dev.indietasten.net; removed when the PR is closed. The steps live in
+# InDieTasten/.github. Unlike the published image (release.yml, frozen gh-pages site) the preview builds the app in
+# app/ from the PR branch with Dockerfile.preview, so reviewers can click through the current source.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+  pull-requests: write
+  deployments: write
+
+jobs:
+  preview:
+    uses: InDieTasten/.github/.github/workflows/preview.yml@main
+    with:
+      image: necessity-screening
+      file: Dockerfile.preview
