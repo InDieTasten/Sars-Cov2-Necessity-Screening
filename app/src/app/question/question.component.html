@@ -1,25 +1,35 @@
 <div #targetScrollTo [ngClass]="{question: true, reduceOpacity: !showQuestion}">
-    {{scrollToView(targetScrollTo)}}
-    <h3>
-        {{ question.display }}
-        <a *ngIf="question.linkHref" [href]="question.linkHref" target="_blank">
-            {{ question.linkText }}
-        </a>
-    </h3>
-    <div *ngIf="question.type === 'choice'">
-        <div class="form-check" *ngFor="let answer of getChoiceKeys()">
-            <label [for]="name + answer" [ngClass]="{checked: question.value === answer, 'form-check-label': true}">
-                <input [id]="name + answer" [name]="name" [value]="answer" type="radio" [(ngModel)]="question.value" [disabled]="!showQuestion" class="form-check-input" (change)="emitChange()" />
-                <span></span>
-                {{ question.choices[answer].display }}
-            </label>
+  {{scrollToView(targetScrollTo)}}
+  <h3>
+    {{ question.display }}
+    @if (question.linkHref) {
+      <a [href]="question.linkHref" target="_blank">
+        {{ question.linkText }}
+      </a>
+    }
+  </h3>
+  @if (question.type === 'choice') {
+    <div>
+      @for (answer of getChoiceKeys(); track answer) {
+        <div class="form-check">
+          <label [for]="name + answer" [ngClass]="{checked: question.value === answer, 'form-check-label': true}">
+            <input [id]="name + answer" [name]="name" [value]="answer" type="radio" [(ngModel)]="question.value" [disabled]="!showQuestion" class="form-check-input" (change)="emitChange()" />
+            <span></span>
+            {{ question.choices[answer].display }}
+          </label>
         </div>
+      }
     </div>
-    <div *ngIf="question.type === 'text' || question.type === 'zip'">
-        <input class="form-control" type="text" [name]="name" [disabled]="!showQuestion" [(ngModel)]="question.value" />
+  }
+  @if (question.type === 'text' || question.type === 'zip') {
+    <div>
+      <input class="form-control" type="text" [name]="name" [disabled]="!showQuestion" [(ngModel)]="question.value" />
     </div>
+  }
 
-    <div *ngIf="question.type === 'tel'">
-        <input class="form-control" [disabled]="!showQuestion" [name]="name" type="tel" />
+  @if (question.type === 'tel') {
+    <div>
+      <input class="form-control" [disabled]="!showQuestion" [name]="name" type="tel" />
     </div>
+  }
 </div>
