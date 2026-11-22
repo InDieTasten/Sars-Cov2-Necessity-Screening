@@ -1,10 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Question } from '../question';
 
 @Component({
-  selector: 'app-symptoms',
-  templateUrl: './symptoms.component.html',
-  styleUrls: ['./symptoms.component.scss']
+    selector: 'app-symptoms',
+    templateUrl: './symptoms.component.html',
+    styleUrls: ['./symptoms.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class SymptomsComponent implements OnInit {
 

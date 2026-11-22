@@ -1,10 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Question } from '../question';
 
 @Component({
-  selector: 'app-environment-info',
-  templateUrl: './environment-info.component.html',
-  styleUrls: ['./environment-info.component.scss']
+    selector: 'app-environment-info',
+    templateUrl: './environment-info.component.html',
+    styleUrls: ['./environment-info.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class EnvironmentInfoComponent implements OnInit {
 

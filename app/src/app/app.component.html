@@ -6,24 +6,30 @@
 
 <div class="container pb-5">
   <div [ngClass]="{headSpaceQuestions: showPage==='questions'}"></div>
-  <div *ngIf="showPage=='welcome'">
-    <app-welcome></app-welcome>
-    <button type="button" (click)="handleClick($event, 'questions')" class="btn btn-primary btn-block mt-3 mb-3 pt-3 pb-3">Fragebogen starten</button>
-  </div>
-  <div *ngIf="showPage=='questions'">
-    <div class="px-3 pt-5 pb-5 text-center">
-      <h2>Fragebogen</h2>
-      <h3>Bitte beantworten Sie alle Fragen.</h3>
+  @if (showPage=='welcome') {
+    <div>
+      <app-welcome></app-welcome>
+      <button type="button" (click)="handleClick($event, 'questions')" class="btn btn-primary d-block w-100 mt-3 mb-3 pt-3 pb-3">Fragebogen starten</button>
     </div>
-    <app-demographics [section]="questionaire.demographics" (change)="updateTotalScore()"></app-demographics>
-    <app-symptoms [showFirstQuestion]="getLastDemographicsStatus()" [section]="questionaire.symptoms" (change)="updateTotalScore()"></app-symptoms>
-    <app-preconditions [showFirstQuestion]="getLastSymptonsStatus()" [section]="questionaire.preconditions" (change)="updateTotalScore()"></app-preconditions>
-    <app-environment-info [showFirstQuestion]="getLastPreconditionStatus()" [section]="questionaire.environmentInfo" (change)="updateTotalScore()"></app-environment-info>
-    <button type="button" (click)="handleClick($event, 'result')" [disabled]="!getLastEnviromentInfoStatus()" class="btn btn-primary btn-block mt-5 mb-5 pt-3 pb-3">Mein Ergebnis</button>
-  </div>
-  
-  <div *ngIf="showPage=='result'" >
-    <app-result [score]="questionaire.score"></app-result>
-    <button type="button" [disabled]="true" class="btn btn-primary btn-block mt-5 mb-5 pt-3 pb-3">Mehr Informationen</button>
-  </div>
+  }
+  @if (showPage=='questions') {
+    <div>
+      <div class="px-3 pt-5 pb-5 text-center">
+        <h2>Fragebogen</h2>
+        <h3>Bitte beantworten Sie alle Fragen.</h3>
+      </div>
+      <app-demographics [section]="questionaire.demographics" (change)="updateTotalScore()"></app-demographics>
+      <app-symptoms [showFirstQuestion]="getLastDemographicsStatus()" [section]="questionaire.symptoms" (change)="updateTotalScore()"></app-symptoms>
+      <app-preconditions [showFirstQuestion]="getLastSymptonsStatus()" [section]="questionaire.preconditions" (change)="updateTotalScore()"></app-preconditions>
+      <app-environment-info [showFirstQuestion]="getLastPreconditionStatus()" [section]="questionaire.environmentInfo" (change)="updateTotalScore()"></app-environment-info>
+      <button type="button" (click)="handleClick($event, 'result')" [disabled]="!getLastEnviromentInfoStatus()" class="btn btn-primary d-block w-100 mt-5 mb-5 pt-3 pb-3">Mein Ergebnis</button>
+    </div>
+  }
+
+  @if (showPage=='result') {
+    <div >
+      <app-result [score]="questionaire.score"></app-result>
+      <button type="button" [disabled]="true" class="btn btn-primary d-block w-100 mt-5 mb-5 pt-3 pb-3">Mehr Informationen</button>
+    </div>
+  }
 </div>

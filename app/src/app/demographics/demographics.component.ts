@@ -1,11 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Question } from '../question';
 
 
 @Component({
-  selector: 'app-demographics',
-  templateUrl: './demographics.component.html',
-  styleUrls: ['./demographics.component.scss']
+    selector: 'app-demographics',
+    templateUrl: './demographics.component.html',
+    styleUrls: ['./demographics.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 
 export class DemographicsComponent implements OnInit {

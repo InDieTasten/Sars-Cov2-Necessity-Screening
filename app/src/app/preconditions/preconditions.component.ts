@@ -1,10 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Question } from '../question';
 
 @Component({
-  selector: 'app-preconditions',
-  templateUrl: './preconditions.component.html',
-  styleUrls: ['./preconditions.component.scss']
+    selector: 'app-preconditions',
+    templateUrl: './preconditions.component.html',
+    styleUrls: ['./preconditions.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class PreconditionsComponent implements OnInit {
 
